@@ -16,95 +16,37 @@ D = amplitude * np.sin(2 * np.pi * 293.66 * timeSamples)
 C = amplitude * np.sin(2 * np.pi * 261.63 * timeSamples)
 B = amplitude * np.sin(2 * np.pi * 246.96 * timeSamples)
 A = amplitude * np.sin(2 * np.pi * 220.00 * timeSamples)
+Q = amplitude * np.sin(1 * np.pi * 1 * timeSamples)
+
+s1 = np.concatenate((F1, F1, E, E), axis=0)
+s2 = np.concatenate((D, D, D, E), axis=0)
+s3 = np.concatenate((D, Q, D, Q), axis=0)
+s4 = np.concatenate((C, C, B, B), axis=0)
+s5 = np.concatenate((A, A, A, B), axis=0)
+s6 = np.concatenate((A, Q, A, Q), axis=0)
 
 #1
-sd.play(F1, fs) # функция воспроизведения массива signal, с частотой дискретизации fs (частота нужна для ЦАП)
-sd.sleep(600)
-
-sd.play(F1, fs)
-sd.sleep(600)
-
-sd.play(E, fs)
-sd.sleep(600)
-
-sd.play(E, fs)
-sd.sleep(600)
+sd.play(s1, fs)
 
 #2
-sd.play(D, fs)
-sd.sleep(600)
-
-sd.play(D, fs)
-sd.sleep(600)
-
-sd.play(D, fs)
-sd.sleep(600)
-
-sd.play(E, fs)
-sd.sleep(600)
+sd.play(s2, fs)
 
 #1
-sd.play(F1, fs) # функция воспроизведения массива signal, с частотой дискретизации fs (частота нужна для ЦАП)
-sd.sleep(600)
-
-sd.play(F1, fs)
-sd.sleep(600)
-
-sd.play(E, fs)
-sd.sleep(600)
-
-sd.play(E, fs)
-sd.sleep(600)
+sd.play(s1, fs)
 
 #3
-sd.play(D, fs)
-sd.sleep(1000)
-
-sd.play(D, fs)
-sd.sleep(1000)
+sd.play(s3, fs)
 
 #4
-sd.play(C, fs)
-sd.sleep(600)
-
-sd.play(C, fs)
-sd.sleep(600)
-
-sd.play(B, fs)
-sd.sleep(600)
-
-sd.play(B, fs)
-sd.sleep(600)
+sd.play(s4, fs)
 
 #5
-sd.play(A, fs)
-sd.sleep(600)
-
-sd.play(A, fs)
-sd.sleep(600)
-
-sd.play(A, fs)
-sd.sleep(600)
-
-sd.play(B, fs)
-sd.sleep(600)
+sd.play(s5, fs)
 
 #4
-sd.play(C, fs)
-sd.sleep(600)
-
-sd.play(C, fs)
-sd.sleep(600)
-
-sd.play(B, fs)
-sd.sleep(600)
-
-sd.play(B, fs)
-sd.sleep(600)
+sd.play(s4, fs)
 
 #6
-sd.play(A, fs)
-sd.sleep(1000)
+sd.play(s6, fs)
 
-sd.play(A, fs)
-sd.sleep(1000)
+print("end")
